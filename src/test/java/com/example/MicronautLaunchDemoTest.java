@@ -10,8 +10,13 @@ import javax.inject.Inject;
 @MicronautTest
 class MicronautLaunchDemoTest {
 
-    @Inject
     EmbeddedApplication<?> application;
+    
+    @Inject
+    MicronautLaunchDemoTest(EmbeddedApplication a) {
+        Assertions.assertNotNull(a);
+        this.application = a;
+    }
 
     @Test
     void testItWorks() {
