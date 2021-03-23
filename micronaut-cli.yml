@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.example
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [app-name, assertj, http-client, java, java-application, junit, logback, management, maven, micrometer, micrometer-prometheus, netty-server, openapi, properties, readme, shade]
