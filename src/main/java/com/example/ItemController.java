@@ -10,7 +10,7 @@ public class ItemController {
 
     @Inject
     ItemController (ItemService injectedItemService) {
-        Validate.isNotNull("injectedItemService", injectedItemService);
+        Validator.isNotNull("injectedItemService", injectedItemService);
         this.itemService = injectedItemService;
     }
 

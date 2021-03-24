@@ -14,9 +14,11 @@ public class ItemService {
     }
 
     // public ItemService(
-    //   UUID uuid
-    // ) {
+    //   UUID uuid,
+    //   ItemConfiguration injectedItemConfiguration )
+    // {
     //     System.out.println("Look! My bean is starting!");
+    //     this.itemConfiguration = injectedItemConfiguration;
     // }
 
     public String getItem(String item) {
