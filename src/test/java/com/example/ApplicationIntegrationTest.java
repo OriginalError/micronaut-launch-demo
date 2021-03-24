@@ -8,19 +8,21 @@ import org.junit.jupiter.api.Assertions;
 import javax.inject.Inject;
 
 @MicronautTest
-class MicronautLaunchDemoTest {
+class ApplicationIntegrationTest {
 
     EmbeddedApplication<?> application;
     
     @Inject
-    MicronautLaunchDemoTest(EmbeddedApplication a) {
+    ApplicationIntegrationTest(EmbeddedApplication a) {
         Assertions.assertNotNull(a);
         this.application = a;
     }
 
     @Test
-    void testItWorks() {
+    void applicationRunsWithProperConfiguration() {
         Assertions.assertTrue(application.isRunning());
+        String applicationName = application.getApplicationConfiguration().PREFIX;
+        Assertions.assertEquals("micronaut.application", applicationName);
     }
 
 }

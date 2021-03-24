@@ -1,3 +1,14 @@
+# Micronaut Launch Demo
+
+## Why
+Hello-world microservice created through Micronaut launch.
+
+## Local Commands
+
+- Run Tests - `./mvnw test`
+- Start Server - `./mvnw `
+
+
 ## Micronaut 2.4.1 Documentation
 
 - [User Guide](https://docs.micronaut.io/2.4.1/guide/index.html)
