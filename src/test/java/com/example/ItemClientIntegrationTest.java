@@ -21,11 +21,4 @@ class ItemClientIntegrationTest {
         Assertions.assertEquals("You queried for workItemX"
                                 , result);
     }
-
-    @Test
-     void itemContrtollerCannotBeConstructedWithANullItemService() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new ItemController(null);
-        });
-    }
 }
