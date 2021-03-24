@@ -9,17 +9,23 @@ import org.junit.jupiter.api.Assertions;
 import javax.inject.Inject;
 
 @MicronautTest
-class ItemAPITest {
+class ItemClientIntegrationTest {
 
     @Inject
-    @Client("/v1")
+    @Client("/")
     RxHttpClient clientUnderTest;
 
     @Test
-    void getReturnsAnItem() {
-        String result = clientUnderTest.retrieve("/workItemX").blockingFirst();
+    void applicationRunsWithProperConfiguration() {
+        String result = clientUnderTest.retrieve("v1/workItemX").blockingFirst();
         Assertions.assertEquals("You queried for workItemX"
                                 , result);
     }
 
+    @Test
+     void itemContrtollerCannotBeConstructedWithANullItemService() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            new ItemController(null);
+        });
+    }
 }

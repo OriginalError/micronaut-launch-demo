@@ -8,4 +8,6 @@
     <root level="info">
         <appender-ref ref="STDOUT" />
     </root>
+    <!-- Toggle on to enable http client trace level logging -->
+    <!-- <logger name="io.micronaut.http.client" level="trace" /> -->
 </configuration>

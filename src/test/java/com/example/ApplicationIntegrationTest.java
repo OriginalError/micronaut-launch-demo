@@ -1,5 +1,6 @@
 package com.example;
 
+import io.micronaut.runtime.ApplicationConfiguration;
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import org.junit.jupiter.api.Test;
@@ -13,16 +14,17 @@ class ApplicationIntegrationTest {
     EmbeddedApplication<?> application;
     
     @Inject
-    ApplicationIntegrationTest(EmbeddedApplication a) {
-        Assertions.assertNotNull(a);
-        this.application = a;
+    ApplicationIntegrationTest(EmbeddedApplication<?> constructionInjectedApplication) {
+        Assertions.assertNotNull(constructionInjectedApplication);
+        this.application = constructionInjectedApplication;
     }
 
     @Test
     void applicationRunsWithProperConfiguration() {
         Assertions.assertTrue(application.isRunning());
-        String applicationName = application.getApplicationConfiguration().PREFIX;
-        Assertions.assertEquals("micronaut.application", applicationName);
+        application.getApplicationConfiguration();
+        Assertions.assertEquals("micronaut.application"
+                                    , ApplicationConfiguration
+                                        .PREFIX);
     }
-
 }
