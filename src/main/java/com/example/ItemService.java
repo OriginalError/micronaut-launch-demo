@@ -3,6 +3,9 @@ package com.example;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+// Import for construction failure stacktrace demo
+// import java.util.UUID;
+
 @Singleton
 public class ItemService { 
 
@@ -13,7 +16,8 @@ public class ItemService {
         Validator.isNotNull("injectedItemConfiguration", injectedItemConfiguration);
         this.itemConfiguration = injectedItemConfiguration;
     }
-
+    
+    // Switch constructors to demonstrate bean construction stacktrace
     // @Inject
     // public ItemService(
     //   UUID uuid,
