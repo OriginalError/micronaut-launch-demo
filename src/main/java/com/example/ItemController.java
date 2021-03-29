@@ -8,15 +8,19 @@ public class ItemController {
 
     private final ItemService itemService;
 
+    private final Logger logger;
+
     @Inject
-    ItemController (ItemService injectedItemService) {
+    ItemController (ItemService injectedItemService, Logger injectedLogger) {
         Validator.isNotNull("injectedItemService", injectedItemService);
+        Validator.isNotNull("injectedLogger", injectedLogger);
+        this.logger = injectedLogger;
         this.itemService = injectedItemService;
     }
 
     @Get("v1/{item}")
     String getItem(String item) {
-        System.out.println(String.format("[GreetingController].getItem invoked with parameter: %s", item));
+        logger.logInfo(String.format("[GreetingController].getItem invoked with parameter: %s", item));
         return itemService.getItem(item);
     }
 }
