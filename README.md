@@ -11,5 +11,7 @@ Random aside - I came into Micronaut a skeptic. I've used several JAVA framework
 
 - Run Tests - `./mvnw test`
 - Run Compile - `./mvnw compile`
+- Run Server - `./mvnw exec:exec`
+- Speedier Run Server - `mvn exec:exec`
 
 
