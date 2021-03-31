@@ -20,7 +20,7 @@ public class ItemController {
 
     @Get("v1/{item}")
     String getItem(String item) {
-        logger.logInfo(String.format("[GreetingController].getItem invoked with parameter: %s", item));
+        logger.logInfo(String.format("[ItemController].getItem invoked with parameter: %s", item));
         return itemService.getItem(item);
     }
 }
